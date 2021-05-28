@@ -120,6 +120,6 @@ SSH into the control node and follow the steps below:
    - Navigate  /etc/ansible/hosts inm terminal, nano hosts file and update the [elk] with 
       10.0.0.5   ansible_python_interpreter=/usr/bin/python3** 
     - https://[your-elk-vm-public-ip]:5601/app/kibana to check that installation worked as    
-      expected****
+      expected
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
