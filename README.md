@@ -91,16 +91,16 @@ The following screenshot displays the result of running `docker ps` after succes
  ![Docker Container Elk Server](Diagram/Docker-ps-Elk-server.JPG)
 
 
-### Target Machines & Beats
+ Target Machines & Beats
 
 This ELK server is configured to monitor the following machines:
  Web-1 : 10.1.0.10
  Web-2 : 10.1.0.11
 
-## We have installed the following Beats on these machines:
+ We have installed the following Beats on these machines:
    Answer: Successfully installed FileBeat and MetricBeat
 
-## These Beats allow us to collect the following information from each machine:
+These Beats allow us to collect the following information from each machine:
    Answer: FileBeat collects all the login attempt irrespective of successfull or unsuccessful. Help to track user logon events 
 
 
@@ -119,8 +119,8 @@ SSH into the control node and follow the steps below:
   Answer the following questions to fill in the blanks:_
    - File name is install-elk.yml and copy to /etc/ansible/install-elk.yml
    - Navigate  /etc/ansible/hosts inm terminal, nano hosts file and update the [elk] with 
-     10.0.0.5   ansible_python_interpreter=/usr/bin/python3** 
-   - https://[your-elk-vm-public-ip]:5601/app/kibana to check that installation worked as    
+      10.0.0.5   ansible_python_interpreter=/usr/bin/python3** 
+    - https://[your-elk-vm-public-ip]:5601/app/kibana to check that installation worked as    
       expected****
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
