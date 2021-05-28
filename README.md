@@ -118,7 +118,10 @@ SSH into the control node and follow the steps below:
 
   Answer the following questions to fill in the blanks:_
    # File name is install-elk.yml and copy to /etc/ansible/install-elk.yml
-   # Navigate  /etc/ansible/hosts inm terminal, nano hosts file and update the [elk] with 10.0.0.5 ansible_python_interpreter=/usr/bin/python3 
-   # https://20.36.45.112:5601/app/kibana to check that installation worked as expected
+   # Navigate  /etc/ansible/hosts inm terminal, nano hosts file and update the [elk] with 10.0.0.5     
+       ansible_python_interpreter=/usr/bin/python3 
+   # https://[your-elk-vm-public-ip]:5601/app/kibana to check that installation worked as    
+      expected
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+
