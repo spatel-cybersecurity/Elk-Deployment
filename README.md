@@ -104,8 +104,7 @@ This ELK server is configured to monitor the following machines:
    Answer: FileBeat collects all the login attempt irrespective of successfull or unsuccessful. Help to track user logon events 
 
 
-           MetricBeat collect the data from you systems and services. Example  CPU usage to memory engaged, even metricbeat send sytem and services statisticsexplain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
-
+           MetricBeat collect the data from you systems and services. Example  CPU usage to memory engaged, even metricbeat send sytem and services statistics 
 
 
 ### Using the Playbook
