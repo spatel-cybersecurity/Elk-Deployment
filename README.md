@@ -101,11 +101,9 @@ This ELK server is configured to monitor the following machines:
    Answer: Successfully installed FileBeat and MetricBeat
 
 These Beats allow us to collect the following information from each machine:
-   Answer: FileBeat collects all the login attempt irrespective of successfull or unsuccessful. Help   
-           to track user logon events 
+   Answer: FileBeat collects all the login attempt irrespective of successfull or unsuccessful. Help  to track user logon events 
            [FileBeat-example](Diagram/Filebeat-Login-example.JPG)
-           MetricBeat collect the data from you systems and services. Example  CPU     
-           usage to memory engaged, even metricbeat send sytem and services statistics.  
+           MetricBeat collect the data from you systems and services. Example  CPU usage to memory engaged, even metricbeat send sytem and services statistics.  
            [MetricBeat-example](Diagram/MetricBeat-CPU-Usage-Example.JPG)
                 
 
