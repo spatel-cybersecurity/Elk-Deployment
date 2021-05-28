@@ -8,8 +8,11 @@ The files in this repository were used to configure the network depicted below.
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
    [Install Elk Server](Ansible/install-elk.yml)
+   
    [Install DVWA on Webservers](Ansible/dvwa-playbook.yml)
+   
    [Install FileBeat on Elk Server](Ansible/filebeat-playbook.yml)
+   
    [Install MetriBeat on Elk Server](Ansible/metricbeat_playbook.yml)
 
 This document contains the following details:
@@ -94,20 +97,23 @@ The following screenshot displays the result of running `docker ps` after succes
  Target Machines & Beats
 
 This ELK server is configured to monitor the following machines:
- Web-1 : 10.1.0.10
- Web-2 : 10.1.0.11
+
+*Web-1 : 10.1.0.10
+
+*Web-2 : 10.1.0.11
 
  We have installed the following Beats on these machines:
    Answer: Successfully installed FileBeat and MetricBeat
 
 These Beats allow us to collect the following information from each machine:
-   Answer: FileBeat collects all the login attempt irrespective of successfull or unsuccessful. Help   
-                  to track user logon events 
-                  [FileBeat-example](Diagram/Filebeat-Login-example.JPG)
-                MetricBeat collect the data from you systems and services. Example  CPU     
-                usage to memory engaged, even metricbeat send sytem and services  
-                statistics  
-                [MetricBeat-example](Diagram/MetricBeat-CPU-Usage-Example.JPG)
+
+ -FileBeat collects all the login attempt irrespective of successfull or unsuccessful. Help  to track user logon events 
+      
+  [FileBeat-example](Diagram/Filebeat-Login-example.JPG)
+	   
+  -MetricBeat collect the data from you systems and services. Example  CPU usage to memory engaged, even metricbeat send sytem and services statistics. 
+	   
+  [MetricBeat-example](Diagram/MetricBeat-CPU-Usage-Example.JPG)
                 
 
 ### Using the Playbook
@@ -121,8 +127,29 @@ SSH into the control node and follow the steps below:
   Answer the following questions to fill in the blanks:_
    - File name is install-elk.yml and copy to /etc/ansible/install-elk.yml
    - Navigate  /etc/ansible/hosts inm terminal, nano hosts file and update the [elk] with 
-      10.0.0.5   ansible_python_interpreter=/usr/bin/python3** 
+      10.0.0.5   ansible_python_interpreter=/usr/bin/python3
     - https://[your-elk-vm-public-ip]:5601/app/kibana to check that installation worked as    
-      expected****
+      expected
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+
+On the Jump box run the following command to get the playbook: curl https://github.com/spatel-cybersecurity/Elk-Deployment/main/Ansible/install-elk.yml > /etc/ansible/install.elk.yml  
+
+Edit the hosts file in /etc/ansible and add the below details in [elk] section of host file  
+your-elk-private-ip   ansible_python_interpreter=/usr/bin/python3 
+
+To run the Playbook: ansible-playbook /etc/ansible/install-elk.yml
+
+Check your installation is working as expected using the link in a browser: http://[your_elk_server_ip]:5601/app/kibana
+
+After successfull launching Kibana in browser, start install FileBeat
+Install FileBeat playbook using command to get the playbook in Elk VM: curl https://github.com/spatel-cybersecurity/Elk-Deployment/main/Ansible/filebeat-playbook.yml > /etc/ansible/filebeat/filebeat-playbook.yml
+
+Run Filebeat Playbook: ansible-playbook /etc/ansible/filebeat/filebeat-playbook.yml 
+
+Next bit is installing MetriBeat, 
+Download MetricBeat playbook by running command in Elk VM: curl https://github.com/spatel-cybersecurity/Elk-Deployment/main/Ansible/metribat-playbook.yml > /etc/ansible/metrics/metricbeat-playbook.yml
+
+Run MetricBeat Playbook: ansible-playbook /etc/ansible/metric/metricbeat-playbook.yml
+
+Install 
