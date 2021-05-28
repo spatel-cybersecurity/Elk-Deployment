@@ -127,15 +127,16 @@ SSH into the control node and follow the steps below:
   Answer the following questions to fill in the blanks:_
    - File name is install-elk.yml and copy to /etc/ansible/install-elk.yml
    - Navigate  /etc/ansible/hosts inm terminal, nano hosts file and update the [elk] with 
-      10.0.0.5   ansible_python_interpreter=/usr/bin/python3** 
+      10.0.0.5   ansible_python_interpreter=/usr/bin/python3
     - https://[your-elk-vm-public-ip]:5601/app/kibana to check that installation worked as    
       expected
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
-On the Jump box run the following command to get the playbook: curl https://github.com/spatel-cybersecurity/cybersecurity-smallCyberSecurityP1/blob/main/Ansible/elk_install.yml > /etc/ansible/roles/elk_install.yml
+On the Jump box run the following command to get the playbook: curl https://github.com/spatel-cybersecurity/Elk-Deployment/main/Ansible/install-elk.yml >  
 
-Edit the hosts file in /etc/ansible and add the details from the screenshot and update your ip addresses -Example Screenshot
+Edit the hosts file in /etc/ansible and add the below details in [elk] section of host file  from the screenshot and update your ip addresses -Example Screenshot
+your-elk-private-ip   ansible_python_interpreter=/usr/bin/python3 
 
-To run the Playbook: ansible-playbook /etc/ansible/roles/elk_install.yml
+To run the Playbook: ansible-playbook /etc/ansible/install-elk.yml
 
 Check your installation is working by visiting in a browser: http://[your_elk_server_ip]:5601/app/kibana
