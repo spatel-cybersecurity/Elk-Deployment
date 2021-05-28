@@ -132,3 +132,10 @@ SSH into the control node and follow the steps below:
       expected
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+On the Jump box run the following command to get the playbook: curl https://github.com/spatel-cybersecurity/cybersecurity-smallCyberSecurityP1/blob/main/Ansible/elk_install.yml > /etc/ansible/roles/elk_install.yml
+
+Edit the hosts file in /etc/ansible and add the details from the screenshot and update your ip addresses -Example Screenshot
+
+To run the Playbook: ansible-playbook /etc/ansible/roles/elk_install.yml
+
+Check your installation is working by visiting in a browser: http://[your_elk_server_ip]:5601/app/kibana
