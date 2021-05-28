@@ -132,7 +132,8 @@ SSH into the control node and follow the steps below:
       expected
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
-On the Jump box run the following command to get the playbook: curl https://github.com/spatel-cybersecurity/Elk-Deployment/main/Ansible/install-elk.yml >  
+
+On the Jump box run the following command to get the playbook: curl https://github.com/spatel-cybersecurity/Elk-Deployment/main/Ansible/install-elk.yml > /etc/ansible/install.elk.yml  
 
 Edit the hosts file in /etc/ansible and add the below details in [elk] section of host file  
 your-elk-private-ip   ansible_python_interpreter=/usr/bin/python3 
@@ -140,3 +141,15 @@ your-elk-private-ip   ansible_python_interpreter=/usr/bin/python3
 To run the Playbook: ansible-playbook /etc/ansible/install-elk.yml
 
 Check your installation is working as expected using the link in a browser: http://[your_elk_server_ip]:5601/app/kibana
+
+After successfull launching Kibana in browser, start install FileBeat
+Install FileBeat playbook using command to get the playbook in Elk VM: curl https://github.com/spatel-cybersecurity/Elk-Deployment/main/Ansible/filebeat-playbook.yml > /etc/ansible/filebeat/filebeat-playbook.yml
+
+Run Filebeat Playbook: ansible-playbook /etc/ansible/filebeat/filebeat-playbook.yml 
+
+Next bit is installing MetriBeat, 
+Download MetricBeat playbook by running command in Elk VM: curl https://github.com/spatel-cybersecurity/Elk-Deployment/main/Ansible/metribat-playbook.yml > /etc/ansible/metrics/metricbeat-playbook.yml
+
+Run MetricBeat Playbook: ansible-playbook /etc/ansible/metric/metricbeat-playbook.yml
+
+Install 
