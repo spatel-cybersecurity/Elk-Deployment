@@ -7,10 +7,10 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
-  #  [Install Elk Server](Ansible/install-elk.yml)
-  # [Install DVWA on Webservers](Ansible/dvwa-playbook.yml)
-  # [Install FileBeat on Elk Server](Ansible/filebeat-playbook.yml)
-  # [Install MetriBeat on Elk Server](Ansible/metricbeat_playbook.yml)
+   [Install Elk Server](Ansible/install-elk.yml)
+   [Install DVWA on Webservers](Ansible/dvwa-playbook.yml)
+   [Install FileBeat on Elk Server](Ansible/filebeat-playbook.yml)
+   [Install MetriBeat on Elk Server](Ansible/metricbeat_playbook.yml)
 
 This document contains the following details:
 - Description of the Topologu
@@ -39,7 +39,7 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
    Answer: Metricbeat records metrics from the systems and services running on the server eg. CPU, Memory etc, and then ouput to Elasticsearch or Logstash.
 
 The configuration details of each machine may be found below.
-Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+ 
 
 
 | Name      | Function              | Public/Private IP Address | Operating System |
@@ -54,8 +54,8 @@ Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown
 The machines on the internal network are not exposed to the public Internet. 
 
   Only the Jump box and Elkserver machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-  # Jumpbox:  40.115.72.100
-  # Elkserver: 20.36.45.112
+  Jumpbox:  40.115.72.100
+  Elkserver: 20.36.45.112
 
 Machines within the network can only be accessed by Jumpbox.
 ## Which machine did you allow to access your ELK VM? What was its IP address?
@@ -101,11 +101,14 @@ This ELK server is configured to monitor the following machines:
    Answer: Successfully installed FileBeat and MetricBeat
 
 These Beats allow us to collect the following information from each machine:
-   Answer: FileBeat collects all the login attempt irrespective of successfull or unsuccessful. Help to track user logon events 
-
-
-           MetricBeat collect the data from you systems and services. Example  CPU usage to memory engaged, even metricbeat send sytem and services statistics 
-
+   Answer: FileBeat collects all the login attempt irrespective of successfull or unsuccessful. Help   
+                  to track user logon events 
+                  [FileBeat-example](Diagram/Filebeat-Login-example.JPG)
+                MetricBeat collect the data from you systems and services. Example  CPU     
+                usage to memory engaged, even metricbeat send sytem and services  
+                statistics  
+                [MetricBeat-example](Diagram/MetricBeat-CPU-Usage-Example.JPG)
+                
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
